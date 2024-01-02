@@ -1,6 +1,7 @@
 import { useState }  from 'react'
 import  './Navbar.css'
 import logo from '../Assets/logo.png'
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -11,32 +12,30 @@ const Navbar = () => {
             <div className='row'>
                 <div className='col-md-12'>
                   {/* <section className='navbar'> */}
-                <nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src={logo} className='logo'/></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+                <nav className="navbar navbar-expand-lg navbar-light">
+  <div className="container-fluid">
+    <a className="navbar-brand" href="#"><img src={logo} className='logo'/></a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" onClick={()=>{setMenu("shop")}}>Shop</a>
+    <div className="collapse navbar-collapse" id="navbarNav">
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <a className="nav-link active" aria-current="page" href="#" onClick={()=>{setMenu("shop")}}><Link  style={{textDecoration:"none",color:"#C2185B"}} to='/'>Shop</Link></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onClick={()=>{setMenu("menu")}}>Men</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#" onClick={()=>{setMenu("menu")}}><Link style={{textDecoration:"none" ,color:"#C2185B"}} to='/menu'>Men</Link></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onClick={()=>{setMenu("women")}}>Women</a>
+        <li className="nav-item">
+          <a className="nav-link" href="#" onClick={()=>{setMenu("women")}}><Link style={{textDecoration:"none" ,color:"#C2185B"}} to='/women'>Women</Link></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onClick={()=>{setMenu("kids")}}>Kids</a>
-        </li>
-        <li class="nav-item">
-        <button type="button" class="btn btn-primary me-3">Login</button>
-        </li>
+        <li className="nav-item">
+          <a className="nav-link" href="#" onClick={()=>{setMenu("kids")}}><Link style={{textDecoration:"none",color:"#C2185B"}} to='/kids'>Kids</Link></a>
+        </li>     
       </ul>
       <div className='nav-login-cart'>
-           <i className='bx bx-shopping-bag'></i>
+      <Link to='/login'><button type="button" className="btn btn-primary me-3">Login</button></Link>
+        <Link to='/cart'style={{textDecoration:"none",color:"#C2185B"}}><i className='bx bx-shopping-bag'></i></Link>   
            <div className='nav-cart-count'>
         0
       </div>
